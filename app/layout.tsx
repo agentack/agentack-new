@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
-import "./globals.css";
+import './globals.css';
 import { LanguageProvider } from "@/lib/i18n/context";
 import { HtmlLangSetter } from "@/components/shared/HtmlLangSetter";
 import { Navbar } from "@/components/layout/Navbar";
@@ -82,6 +82,7 @@ export default function RootLayout({
             gtag('js', new Date());
             gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
           `}
+
         </Script>
       </head>
       <body
