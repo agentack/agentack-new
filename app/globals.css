@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+:root {
+  /* ── Surfaces (deep indigo-navy — extracted from UI sample #000820/#101030) ── */
+  --void: #080B1C;
+  --panel: #121630;
+  --lifted: #1B2143;
+  --abyss: #04060F;
+
+  /* ── Accent — Electric indigo-violet (extracted #5A3AD8) ── */
+  --accent: #5A3AD8;
+  --accent-strong: #7A5AF0;
+  --accent-deep: #0B0B26;
+  --accent-tint: rgba(90, 58, 216, 0.14);
+  --accent-border: rgba(90, 58, 216, 0.34);
+  --accent-border-soft: rgba(90, 58, 216, 0.18);
+  --accent-glow: rgba(90, 58, 216, 0.45);
+
+  /* ── Electric azure (tooba — cool blue thread) ── */
+  --azure: #4C8CFF;
+  --azure-soft: rgba(76, 140, 255, 0.18);
+  --azure-glow: rgba(76, 140, 255, 0.4);
+
+  /* ── Gold spark (aiman · Accent #F4C75A — restrained highlight) ── */
+  --teal-primary: #F4C75A;
+  --teal-mid: #E3B84C;
+
+  /* ── Text hierarchy (extracted #F8F8F8 / #9090A0) ── */
+  --text-bright: #F5F5FA;
+  --text-muted: #A6ABBF;
+  --text-soft: #CDD1E6;
+  --text-ghost: #6C7189;
+
+  /* ── Borders / dividers ── */
+  --border-strong: #2A3060;
+  --border-soft: #1E2345;
+
+  /* ── Signature gradient: deep blue → electric indigo-violet ── */
+  --navy-0: #050A20;
+  --navy-1: #0A1440;
+  --navy-2: #2A2180;
+  --navy-3: #5A3AD8;
+
+  /* ══ Legacy aliases (keep working components intact) ══ */
+  --black-base: var(--void);
+  --black-2: #0B0E20;
+  --black-3: var(--abyss);
+  --green-primary: var(--accent);
+  --green-hover: var(--accent-strong);
+  --green-dark: var(--accent-deep);
+  --green-mid: #24175C;
+  --green-tinted: #151033;
+  --sage-dark: #3A2F78;
+  --sage-mid: var(--text-muted);
+  --sage-light: var(--text-soft);
+  --frost-white: var(--text-bright);
+  --frost-mint: #E9E6FF;
+  --surface-dark: var(--panel);
+  --border-dark: var(--border-soft);
+  --red-danger: #D44B5A;
+
+  /* Fonts */
+  --font-display: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+}
+
+@theme inline {
+  /* Volcanic surfaces */
+  --color-void: var(--void);
+  --color-panel: var(--panel);
+  --color-lifted: var(--lifted);
+  --color-abyss: var(--abyss);
+
+  /* Glacial accent */
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-deep: var(--accent-deep);
+  --color-accent-tint: var(--accent-tint);
+  --color-accent-border: var(--accent-border);
+  --color-accent-border-soft: var(--accent-border-soft);
+  --color-accent-glow: var(--accent-glow);
+
+  /* Glacial azure blend */
+  --color-azure: var(--azure);
+  --color-azure-soft: var(--azure-soft);
+  --color-azure-glow: var(--azure-glow);
+
+  /* Brand electric */
+  --color-teal-primary: var(--teal-primary);
+  --color-teal-mid: var(--teal-mid);
+
+  /* Text */
+  --color-bright: var(--text-bright);
+  --color-muted: var(--text-muted);
+  --color-soft: var(--text-soft);
+  --color-ghost: var(--text-ghost);
+
+  /* Borders */
+  --color-border-strong: var(--border-strong);
+  --color-border-soft: var(--border-soft);
+
+  /* Navy gradient */
+  --color-navy-0: var(--navy-0);
+  --color-navy-1: var(--navy-1);
+  --color-navy-2: var(--navy-2);
+  --color-navy-3: var(--navy-3);
+
+  /* Legacy aliases */
+  --color-black-base: var(--black-base);
+  --color-black-2: var(--black-2);
+  --color-black-3: var(--black-3);
+  --color-green-primary: var(--green-primary);
+  --color-green-hover: var(--green-hover);
+  --color-green-dark: var(--green-dark);
+  --color-green-mid: var(--green-mid);
+  --color-green-tinted: var(--green-tinted);
+  --color-sage-dark: var(--sage-dark);
+  --color-sage-mid: var(--sage-mid);
+  --color-sage-light: var(--sage-light);
+  --color-frost-white: var(--frost-white);
+  --color-frost-mint: var(--frost-mint);
+  --color-surface-dark: var(--surface-dark);
+  --color-border-dark: var(--border-dark);
+  --color-red-danger: var(--red-danger);
+
+  /* Fonts */
+  --font-display: var(--font-space-grotesk);
+
+  /* Glow shadows */
+  --shadow-glow: 0 0 24px var(--accent-glow);
+  --shadow-card: 0 1px 0 rgba(245, 245, 250, 0.04) inset, 0 8px 32px rgba(2, 3, 10, 0.45);
+}
+
+/* Base styles */
+body {
+  background: var(--void);
+  color: var(--text-bright);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+/* Focus states - accessible focus ring */
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--azure);
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Prevent horizontal scroll */
+body {
+  overflow-x: hidden;
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--accent);
+  color: var(--accent-deep);
+}
+
+/* Custom scrollbar (WebKit browsers) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--abyss);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ── Indigo grid pattern (subtle azure architecture texture) ── */
+.grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(120, 110, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 110, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* ── Neural network dots ── */
+.dot-matrix {
+  background-image: radial-gradient(rgba(122, 90, 240, 0.2) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* ── Abyss glow orb ── */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(90px);
+}
+
+/* ── Thin elevated hairline ── */
+.hairline {
+  border-color: var(--accent-border-soft);
+}
