@@ -29,12 +29,8 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: {
-    template: "%s | Agentack",
-    default: "Agentack | AI Workforce for Modern Businesses",
-  },
-  description:
-    "We build custom AI agents and agentic AI systems that handle support, sales, and operations for ecommerce, healthcare, agencies, SaaS companies, and real estate.",
+title: "Agentack | AI Automation Agency & Custom AI Agents",
+description: "Agentack builds custom AI agents and intelligent automations for ecommerce, healthcare, agencies, SaaS, and real estate to scale your workforce.",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
   ),
