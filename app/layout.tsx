@@ -33,7 +33,15 @@ title: "Agentack | AI Automation Agency & Custom AI Agents",
 description: "Agentack builds custom AI agents and intelligent automations for ecommerce, healthcare, agencies, SaaS, and real estate to scale your workforce.",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
-  ),
+  ),alternates: {
+    canonical: 'https://agentack.co',
+    languages: {
+      'en-US': 'https://agentack.co',
+      'en-GB': 'https://agentack.co',
+      'en-PK': 'https://agentack.co',
+      'x-default': 'https://agentack.co',
+    },
+  }, 
   icons: {
     icon: "/icon.png",
   },
