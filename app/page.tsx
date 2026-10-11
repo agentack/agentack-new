@@ -1,5 +1,5 @@
-import { Metadata } from 'next'
-import { client } from '@/lib/sanity/client'
+import FAQSchema from '@/components/FAQSchema';
+import { Metadata } from 'next';
 import { siteSettingsQuery, servicesQuery, icpsIndexQuery } from '@/lib/sanity/queries'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { LogoStripSection } from '@/components/sections/LogoStripSection'
@@ -14,7 +14,24 @@ import { FinalCTASection } from '@/components/sections/FinalCTASection'
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await client.fetch(siteSettingsQuery)
 
-  return {
+  return {<FAQSchema faqs={[
+        {
+          question: "How does AI automation for e-commerce stores work?",
+          answer: "Our custom AI agents integrate with Shopify or WooCommerce to automate customer support, order tracking, returns, and product recommendations 24/7."
+        },
+        {
+          question: "How can AI lead generation benefit real estate agencies?",
+          answer: "AI agents automatically qualify property enquiries via WhatsApp and website chatbots, follow up with leads 24/7, and sync with your CRM."
+        },
+        {
+          question: "What healthcare administrative tasks can AI automate?",
+          answer: "Our AI clinic autopilot automates appointment bookings, patient FAQs, WhatsApp reminders, and front-desk administrative workflows."
+        },
+        {
+          question: "Do you offer white-label AI automation services for agencies?",
+          answer: "Yes, we partner with marketing, recruitment, and SEO agencies to deliver custom multi-agent workflows and white-label AI solutions for their clients."
+        }
+      ]} />
     title: settings?.agencyName
       ? `${settings.agencyName} | AI Workforce for Modern Businesses`
       : 'Agentack | AI Workforce for Modern Businesses',
