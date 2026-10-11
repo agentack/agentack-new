@@ -1,43 +1,4 @@
-import FAQSchema from '@/components/FAQSchema';
-
-export default function Home() {
-  // Combine all service FAQs for Schema Markup
-  const allServicesFAQs = [
-    // Ecommerce FAQs
-    {
-      question: 'How does AI automation for e-commerce stores work?',
-      answer:
-        'Our custom AI agents integrate with Shopify or WooCommerce to automate customer support, order tracking, returns, and product recommendations 24/7.',
-    },
-    // Real Estate FAQs
-    {
-      question: 'How can AI lead generation benefit real estate agencies?',
-      answer:
-        'AI agents automatically qualify property enquiries via WhatsApp and website chatbots, follow up with leads 24/7, and sync with your CRM.',
-    },
-    // Healthcare FAQs
-    {
-      question: 'What healthcare administrative tasks can AI automate?',
-      answer:
-        'Our AI clinic autopilot automates appointment bookings, patient FAQs, WhatsApp reminders, and front-desk administrative workflows.',
-    },
-    // Agency & SaaS FAQs
-    {
-      question: 'Do you offer white-label AI automation services for agencies?',
-      answer:
-        'Yes, we partner with marketing, recruitment, and SEO agencies to deliver custom multi-agent workflows and white-label AI solutions for their clients.',
-    },
-  ];
-
-  return (
-    <main>
-      {/* FAQ Schema Injector for Google */}
-      <FAQSchema faqs={allServicesFAQs} />
-
-      {/* Aapka baaki landing page ka code yahan rahega */}
-    </main>
-  );
-}import { Metadata } from 'next'
+import { Metadata } from 'next'
 import { client } from '@/lib/sanity/client'
 import { siteSettingsQuery, servicesQuery, icpsIndexQuery } from '@/lib/sanity/queries'
 import { HeroSection } from '@/components/sections/HeroSection'
