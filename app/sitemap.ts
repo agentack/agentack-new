@@ -1,13 +1,13 @@
-import { MetadataRoute } from 'next';
+mport { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://agentack.co';
+  const baseUrl = 'https://agentack.co'
 
   return [
     {
       url: baseUrl,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: 'yearly',
       priority: 1.0,
     },
     {
@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     },
     {
-      url: ${baseUrl}/clinic-autopilot,
+      url: ${baseUrl}/saas-automation,
       lastModified: new Date(),
       changeFrequency: 'monthly',
       priority: 0.8,
@@ -28,17 +28,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.8,
     },
-    {
-      url: ${baseUrl}/agency-delivery-engine,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-    {
-      url: ${baseUrl}/saas-revenue-engine,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.8,
-    },
-  ];
+  ]
 }
